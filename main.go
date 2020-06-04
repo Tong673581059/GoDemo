@@ -15,7 +15,7 @@ type MyMainWindow struct {
 }
 
 func main() {
-	initInterface("E:\\海看体育项目资料\\hksports.txt")
+	initInterface("hksports.txt")
 	//mw := &MyMainWindow{}
 	//err := MainWindow{
 	//	AssignTo: &mw.MainWindow, //窗口重定向至mw，重定向后可由重定向变量控制控件

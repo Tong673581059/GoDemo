@@ -5,7 +5,7 @@
 店铺-提交资质增加省市区 --修改。
 /sports/sptComapany/commitStoreInfo
 isNeedVerify userId venueId provId cityId districtId licenseUrl licenseNo businessName licenceLegalName accountName accountUrl AccountLegalName bank bankBranch bankAccount payAccount idFrontUrl idBackUrl idName cardNo
-{     "message": "获取成功！",     "count": "",     "success": true, 	"code": 10000, }
+{     "message": "获取成功！",     "count": "",     "success": true, 	"code": 10000}
 店铺-修改资质信息回填--修改 在原来基础上增加 返回省市区信息回填
 /sports/sptComapany/getBusinessEditInfo
 
@@ -85,11 +85,11 @@ storeId
 26个人中心详情-修改
 /busiapi/userCfg/getBusinessDetail
 
-{ code: "10000" count: 0 errCode: null execptionTrace: "" message: "获取成功！" requestURI: "" responseObj: { businessId: "205" businessType: "1" headImage: "http://tybapitest.snctv.cn/album_images/imgsDir/sptUser/20200426/20200426a2921621d1e64e7d84248d94f7fd4f3b.jpg" phoneNum: "15106987537" } success: true}
+{ code: "10000", count: 0, errCode: null, execptionTrace: "", message: "获取成功！", requestURI: "", responseObj: { businessId: "205", businessType: "1", headImage: "http://tybapitest.snctv.cn/album_images/imgsDir/sptUser/20200426/20200426a2921621d1e64e7d84248d94f7fd4f3b.jpg", phoneNum: "15106987537" } success: true}
 27子账号列表-吴兴惠-修改1
 /busiapi/userCfg/getBusinessAccountList
 page limit accountRoleType
-{ code: "10000" count: 1 errCode: null execptionTrace: "" message: "子账号列表获取成功!" requestURI: "" responseObj: [ { accountId: "205" accountNickName: "梁先生" accountOldPassword: "" accountPassword: "" accountPhoneNum: "" accountRoleType: "" accountState: "1" businessId: "" password_solt: "" shopName: "name,name" theirShopList: "" vcode: "" } ]  success: true }
+{ code: "10000" count: 1, errCode: null, execptionTrace: "", message: "子账号列表获取成功!", requestURI: "", responseObj: [ { accountId: "205", accountNickName: "梁先生", accountOldPassword: "", accountPassword: "", accountPhoneNum: "", accountRoleType: "", accountState: "1", businessId: "", password_solt: "", shopName: "name,name", theirShopList: "", vcode: "" } ]  success: true }
 28子账号详情-吴兴惠-修改1
 /busiapi/userCfg/getBusinessAccountDetail
 subUserId
@@ -141,7 +141,7 @@ storeId groupName groupThemeImg groupPrice groupOldPrice refundSetting refundTim
 团购管理-团购详情-修改
 /sports/sptAppTicketCfg/getGroupDetail
 storeId groupId
-{ "code": "10000", "count": 0, "message": "获取成功", "responseObj": { "application_person_info": "18-55",适用人数 "application_person_num": 2,适用人群 "can_add_num": 0,可加购数量，没用，废弃 "can_purchase_begin_time": "2019-07-22 23:45:51",购买开始时间 "can_purchase_end_time": "2019-07-31 00:00:00",购买结束时间 "can_purchase_num": 10,可以购买数量 "can_use_begin_date": "2019-07-22",可用开始时间 "can_use_end_date": "2019-07-31",可用结束时间 "cannot_use_date_desc": "国家法定节假日",不可用时间 "cautions": "注意",注意事项 "city_id": 370100,废弃 "is_attention": "0",废弃 "lable_id": "",废弃 "origina_unit_price": "1.00",原价 "refund_settings": "2",退款设置1 为不可退款 2为在时效范围内可以退款 "refund_time_settings": "24",多少小时内可退款 "reserve_info": "无需预约",预约信息 "sale_fee": "", 卖出钱数，废弃 "sale_num": "", 卖出数量，废弃 "sport_type_icon": "",，废弃 "sport_type_id": "0",运动类型id，0表示全部类型 "sport_type_name": "全部类型",运动类型名称 "ticket_id": "2",团购id "ticket_name": "哈哈哈0722",团购名称 "ticket_sale_num": "",已售数量 "ticket_state": "1",团购状态 "ticket_state_name": "",状态名称 "ticket_stock": 191,库存 "unit_price": "0.01",现价 "use_time_desc": "",使用时间描述 "venue_id": "3090"场馆id, "groupProjectList": [ { "groupProjectId": "1", "groupProjectName": "团购项目名称", "groupProjectCount": "团购项目数量", "groupProjectUnit": "团购项目数量单位", "groupProjectOldPrice": "团购项目原价", }, { "groupProjectId": "2",  "groupProjectName": "团购项目名称", "groupProjectCount": "团购项目数量", "groupProjectUnit": "团购项目数量单位", "groupProjectOldPrice": "团购项目原价",  }, ], "groupProjectPrice": "团购价", "serviceContent": "服务内容", "applicableStoresId": "1,2,3,4", "useTimeType": "1", "useTimeCount": "1", "useTimeUnit": "天", "appointmentSetting": "1", "appointmentCount": "2", "appointmentUnit": "天", }, "success": true }
+{ "code": "10000", "count": 0, "message": "获取成功", "responseObj": { "application_person_info": "18-55", "application_person_num": 2, "can_purchase_begin_time": "2019-07-22 23:45:51", "can_purchase_end_time": "2019-07-31 00:00:00", "can_purchase_num": 10, "can_use_begin_date": "2019-07-22", "can_use_end_date": "2019-07-31", "cannot_use_date_desc": "国家法定节假日",不可用时间 ", "cautions": "注意",注意事项", "origina_unit_price": "1.00", "refund_settings": "2", "refund_time_settings": "24", "reserve_info": "无需预约",预约信息", "sport_type_id": "0", "sport_type_name": "全部类型", "ticket_id": "2", "ticket_name": "哈哈哈0722",团购名称", "ticket_sale_num": "", "ticket_state": "1", "ticket_state_name": "", "ticket_stock": 191, "unit_price": "0.01", "use_time_desc": "", "venue_id": "3090", "groupProjectList": [ { "groupProjectId": "1", "groupProjectName": "团购项目名称", "groupProjectCount": "团购项目数量", "groupProjectUnit": "团购项目数量单位", "groupProjectOldPrice": "团购项目原价", }, { "groupProjectId": "2",  "groupProjectName": "团购项目名称", "groupProjectCount": "团购项目数量", "groupProjectUnit": "团购项目数量单位", "groupProjectOldPrice": "团购项目原价",  }, ], "groupProjectPrice": "团购价", "serviceContent": "服务内容", "applicableStoresId": "1,2,3,4", "useTimeType": "1", "useTimeCount": "1", "useTimeUnit": "天", "appointmentSetting": "1", "appointmentCount": "2", "appointmentUnit": "天", }, "success": true }
 小程序权限-权限列表-新增
 /sports/sptauthCfg/getAuthList
 storeId managerId useForType subUserId
