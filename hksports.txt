@@ -85,11 +85,11 @@ storeId
 26个人中心详情-修改
 /busiapi/userCfg/getBusinessDetail
 
-{ code: "10000", count: 0, errCode: null, execptionTrace: "", message: "获取成功！", requestURI: "", responseObj: { businessId: "205", businessType: "1", headImage: "http://tybapitest.snctv.cn/album_images/imgsDir/sptUser/20200426/20200426a2921621d1e64e7d84248d94f7fd4f3b.jpg", phoneNum: "15106987537" } success: true}
+{ "code": "10000", "count": 0, "errCode": null, "execptionTrace": "", "message": "获取成功！", "requestURI": "", "responseObj": { "businessId": "205", "businessType": "1", "headImage": "http://tybapitest.snctv.cn/album_images/imgsDir/sptUser/20200426/20200426a2921621d1e64e7d84248d94f7fd4f3b.jpg", "phoneNum": "15106987537" }, "success": true}
 27子账号列表-吴兴惠-修改1
 /busiapi/userCfg/getBusinessAccountList
 page limit accountRoleType
-{ code: "10000" count: 1, errCode: null, execptionTrace: "", message: "子账号列表获取成功!", requestURI: "", responseObj: [ { accountId: "205", accountNickName: "梁先生", accountOldPassword: "", accountPassword: "", accountPhoneNum: "", accountRoleType: "", accountState: "1", businessId: "", password_solt: "", shopName: "name,name", theirShopList: "", vcode: "" } ]  success: true }
+{"code": "10000", "count": 1, "errCode": null, "execptionTrace": "", "message": "子账号列表获取成功!", "requestURI": "", "responseObj":[{"accountId": "205","accountNickName": "梁先生", "accountOldPassword": "", "accountPassword": "", "accountPhoneNum": "", "accountRoleType": "", "accountState": "1", "businessId": "", "password_solt": "", "shopName": "name,name", "theirShopList": "", "vcode": ""}],  "success": true }
 28子账号详情-吴兴惠-修改1
 /busiapi/userCfg/getBusinessAccountDetail
 subUserId
@@ -109,7 +109,7 @@ subUserId accountRoleType useForType
 212登录-修改
 /sports/userCfg/login
 phoneNum loginType passWord vcode
-{ "message": "登录成功！", "responseObj": {businessId:, loginRole: "1", managerId: data.managerId, venue_id: "", venueName: "", }, "success": true, "code": 10000}
+{ "message": "登录成功！", "responseObj": {"businessId":"", "loginRole": "1", "managerId": "data.managerId", "venue_id": "", "venueName": "", }, "success": true, "code": 10000}
 卡券管理-卡券列表-修改
 /sports/sptCouponCfg/getCardList
 storeId cardClassifyType page limit
@@ -186,10 +186,10 @@ venue_id groupId
 /sports/sptAppVenueCfg/checkSptFieldGoodsCanBook
 venue_id field_id
 { "code": "10000", "count": 0, "errCode": null, "execptionTrace": "", "message": "该场地n小时起订", "responseObj": { }, "success": true }
-场馆-场馆详情页——评论列表-修改
-/sports/sptAppVenueCfg/getSptVenueComment
-venue_id
-{ "code": "10000", "count": 1, "errCode": 100, "execptionTrace": "", "message": "评论获取成功！", "requestURI": "", "responseObj": [{ "avg_score": 0.0, "commentPic": [], "comment_content": "非常棒  气氛很好  ", "comment_id": "1743", "comment_state": 0, "comment_state_desc": "", "comment_time": "2020-05-06 22:02:27", "fac_score": 0, "field_score": 0, "head_pic": "http://master.hiconsports.com/album_images/imgsDir/sptuser/20200502/202005022131323e6e8d0c-b595-4e8e-99f6-fb8342563bf6.jpg", "modify_time": "", "nickname": "Petrichor", "order_no": "202005062157430001", "order_type": "4", "service_score": 0, "user_id": "", "venue_id": "", "isReply":"1", "replyName":"我是一个场馆（商家）", "replyContent":"您好！感谢您的好评及对我们提出的宝贵建议，我们会继续改善巴拉巴阿拉啦啦啦啦", "replyTime":"2019-05-31 09:01:56" }], "success": true }
+#场馆-场馆详情页——评论列表-修改
+#/sports/sptAppVenueCfg/getSptVenueComment
+#venue_id
+#{ "code": "10000", "count": 1, "errCode": 100, "execptionTrace": "", "message": "评论获取成功！", "requestURI": "", "responseObj": [{ "avg_score": 0.0, "commentPic": [], "comment_content": "非常棒  气氛很好  ", "comment_id": "1743", "comment_state": 0, "comment_state_desc": "", "comment_time": "2020-05-06 22:02:27", "fac_score": 0, "field_score": 0, "head_pic": "http://master.hiconsports.com/album_images/imgsDir/sptuser/20200502/202005022131323e6e8d0c-b595-4e8e-99f6-fb8342563bf6.jpg", "modify_time": "", "nickname": "Petrichor", "order_no": "202005062157430001", "order_type": "4", "service_score": 0, "user_id": "", "venue_id": "", "isReply":"1", "replyName":"我是一个场馆（商家）", "replyContent":"您好！感谢您的好评及对我们提出的宝贵建议，我们会继续改善巴拉巴阿拉啦啦啦啦", "replyTime":"2019-05-31 09:01:56" }], "success": true }
 场馆-场馆详情页——评论详情-修改
 /sports/sptAppOrderCfg/getSptOrderCommentDetl
 comment_id
