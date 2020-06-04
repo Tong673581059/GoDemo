@@ -1,0 +1,201 @@
+店铺-展示未读评论 --新增。
+/busiapi/messageCfg/getUnreadMessage
+
+{"message": "获取成功！", "count": "", "success": true, "code": 10000, "responseObj":{unReadMessage:"true",number:"5"}}
+店铺-提交资质增加省市区 --修改。
+/sports/sptComapany/commitStoreInfo
+isNeedVerify userId venueId provId cityId districtId licenseUrl licenseNo businessName licenceLegalName accountName accountUrl AccountLegalName bank bankBranch bankAccount payAccount idFrontUrl idBackUrl idName cardNo
+{     "message": "获取成功！",     "count": "",     "success": true, 	"code": 10000, }
+店铺-修改资质信息回填--修改 在原来基础上增加 返回省市区信息回填
+/sports/sptComapany/getBusinessEditInfo
+
+{ "message": "获取成功！", "count": "", "responseObj": {  "provId":"370000", "provName":"山东省", "cityId":"370100", "cityName":"济南市", "districtId":"370101", "districtName":"历下区", }, "success": true, "code": 10000 }
+提现-账户余额 --修改。
+/sports/thirdPartyCooperationCfg/balanceOfAccount
+storeId
+{ "message": "获取成功！", "count": "", "responseObj":{ "totalAmount":5.86, "totalInCash":0.03, "creditCardNo":"6217002340039292244 ", "haveCash":0.11, "bankName":"农业银行", "canCash":2.58, "inComes":99999.00, "platformService":19.00, "unSettlementAmount":9999.00, "settlementAmount":999.00, "cashFailed":99.11, }, "success": true, "code": 10000 }
+提现-待（已）结算订单--新增。
+/sports/sptAppOrderCfg/getSettleOrderList
+settleState storeId page limit
+{ "message": "获取成功！", "count": 20, "responseObj": [{ "orderId": "424234234frsfsesf", "settleState":"1", "orderType":"1", "orderNo":"65876876786", "orderCreateTime": "2019-10-24 12:00", "fieldName": "场地名称", "venueName": "门店名称", "transactionAmount":"12", "transactionState":"1" }], "success": true, "code": 10000}
+评论-评论管理列表–修改 -新增商家回复。
+/sports/sptAppVenueCfg/getSptVenueComment
+storeId
+{ "message": "获取成功！", "count": "", "responseObj": [{ "avg_score":0.0, "commentPic":[ { "comment_id":"211", "pic_address":"http://tybapitest.snctv.cn/album_images/imgsDir/sptapporder/20200410/8dd767e4-cd3b-4d95-80fa-22908dfe8086.jpg", "pic_id":"" } ], "comment_content":"发布图片", "comment_id":"211", "comment_state":0, "comment_state_desc":"", "comment_time":"2020-04-10 20:05:47", "fac_score":0, "field_score":0, "head_pic":"", "modify_time":"", "nickname":"", "order_no":"202004081455130001", "order_type":"1", "service_score":0, "sportTypeName":"滑板", "user_id":"", "venue_id":"",  "storeName":"中健健身", "storeReply":"谢谢您的光临，我们将做的更好", "isReply":"0", } ], "success": true, "code": 10000 }
+评论-回复评论-新增。
+/sports/sptComapany/replyComment
+commentId replyContent
+{ "message": "获取成功！", "count": "", "success": true, "code": 10000}
+评论-删除回复评论-新增。
+/sports/sptComapany/deleteReplyComment
+commentId
+{ "message": "获取成功！", "count": "", "success": true, "code": 10000}
+订单管理--订单类目数
+/sports/sptAppOrderCfg/getOrderStateList
+orderType storeId
+{ "message": "获取成功！", "count": 20, "responseObj": [{ "orderState": "0", "orderCount": "40" }, { "orderState": "1", "orderCount": "10" }, { "orderState": "2", "orderCount": "10" }, { "orderState": "3", "orderCount": "10" }, { "orderState": "4", "orderCount": "10" },{ "orderState": "5", "orderCount": "10" },{ "orderState": "6", "orderCount": "10" },{ "orderState": "7", "orderCount": "10" },{ "orderState": "9", "orderCount": "10" }], "success": true, "code": 10000}
+1保存场地信息
+/sports/sptBusiVenueCfg/saveField
+venue_id field_type_id sport_type_id field_num is_reserve pay_type time_range removed_timeids fieldTimeStr refund_settings refund_time_settings field_desc appointment_Days appointment_begin
+{"message": "保存成功！","success": true,"code": 10000}
+2场地详情-修改
+/sports/sptBusiVenueCfg/getSptFieldDetail
+venue_id field_type_id
+{"message": "获取成功！","count": "","responseObj": { "field_type_id": "1", "field_type_name": "室内篮球场" "sport_type_id": "1", "sport_type_name": "篮球" "field_num": "1", "is_reserve": "1", 该门店是否有场地被预定：0-否，1-是 "pay_type": "1", "time_range":"1", "sptFieldTimeList": [ { "time_id":"1", "begin_time": "9:00", "end_time": "20:00", "price":"45" "period": "1,2", "is_reserve": "1", 该时段是否有场地被预定：0-否，1-是 }, { "time_id":"2", "begin_time": "9:00", "end_time": "20:00", "price":"45" "period": "1,2", "is_reserve": "1", 该时段是否有场地被预定：0-否，1-是 }, ],refund_settings："1",refund_time_settings:"1",field_desc："",appointment_Days："7",appointment_begin："1",},"success": true,"code": 10000}
+3场馆管理列表-修改
+/sports/sptBusiVenueCfg/getSptFieldList
+online_status venue_id page limit
+{ "message": "获取成功！", "count": 20, "responseObj": [{ "field_type_id": "1", "field_type_name": "室内篮球场" "sport_type_id": "1", "sport_type_name": "篮球" "pay_type": "1", "price": "35", "period": "1,2", "begin_time": "9:00", "end_time": "20:00", "appointment_order": "预定订单", "appointment_penple": "预订人数", "appointment_time": "预定时长", }], "is_reserve": "1", "success": true, "code": 10000}
+4场馆管理上架下架-新增
+/sports/sptBusiVenueCfg/startUse
+storeId fieldId fieldState
+{ "message": "保存成功！", "success": true, "code": 10000 }
+5管理场地-新增
+/sports/sptBusiVenueCfg/getFieldReserveList
+venue_id field_type_id curr_day
+{ "message": "获取成功！", "count": 20, "responseObj": {timeList: [{ time: "8:00" }], reserveList: [{ fieldId: "5511", fieldName: "场地1", isReserve: "0", price: 0.5, reserveDate: "2020-05-27", reserveWeekDate: "星期三", time: "8:00-8:30", reserveId: "123" }], fieldList: [{ fieldId: "5511", fieldName: "场地1" }], bookeableDateList: [{ date: "5月27日", week: "周三" }] }, "success": true, "code": 10000}
+6场地预订-新增
+/sports/sptBusiVenueCfg/reserveField
+venueId beginTime reserveDate fieldIds price	必选	string	场地价格
+{ "message": "预订场地成功！", "success": true, "code": 10000}
+7取消场地预订-新增
+/sports/sptBusiVenueCfg/cancelReserveField
+venueId reserveId
+{ "message": "取消预订成功！", "success": true, "code": 10000}
+21门店列表-修改
+/busiapi/sptAppVenueCfg/getShopList
+shopListType subUserId page limit
+{ "message": "获取成功！", "count": 20, "responseObj": [{ "shopId": "423esrwed", "shopIndex": "1", "shopName": "全民健身中心（山大路店）", "shopManagerId": "231231", "shopManagerName": "我是店长1", "shopState": "2", "shopRefuseDec": "", "isChoose":"0", "isTwo":"1", "isOwnCreate":"1" }], "success": true, "code": 10000}
+22删除门店-新增
+/busiapi/sptAppVenueCfg/deleteShop
+storeId
+{ "message": "删除门店成功", "success": true, "code": 10000 }
+23下架门店-新增
+/busiapi/sptAppVenueCfg/deleteSoldOutShop
+storeId
+{ "message": "下架门店成功", "success": true, "code": 10000 }
+24上架门店-新增
+/busiapi/sptAppVenueCfg/deletePutawayShop
+storeId
+{ "message": "上架门店成功", "success": true, "code": 10000 }
+25对公账户详情-新增
+/busiapi/sptAppVenueCfg/getCorporateAccountDetail
+storeId
+{ "message": "获取成功！", "count": 20, "responseObj": [{ "corporateAccountUrl": "我是一个图片地址", "companyName": "乐旋乒乓球（山大店）", "corporateAccountLegalName": "王小二", "bank": "招商银行", "bankBranch": "我是一个开户支行", "bankAccount": "123123213131", "payAccount": "213111225534", }], "success": true, "code": 10000}
+26个人中心详情-修改
+/busiapi/userCfg/getBusinessDetail
+
+{ code: "10000" count: 0 errCode: null execptionTrace: "" message: "获取成功！" requestURI: "" responseObj: { businessId: "205" businessType: "1" headImage: "http://tybapitest.snctv.cn/album_images/imgsDir/sptUser/20200426/20200426a2921621d1e64e7d84248d94f7fd4f3b.jpg" phoneNum: "15106987537" } success: true}
+27子账号列表-吴兴惠-修改1
+/busiapi/userCfg/getBusinessAccountList
+page limit accountRoleType
+{ code: "10000" count: 1 errCode: null execptionTrace: "" message: "子账号列表获取成功!" requestURI: "" responseObj: [ { accountId: "205" accountNickName: "梁先生" accountOldPassword: "" accountPassword: "" accountPhoneNum: "" accountRoleType: "" accountState: "1" businessId: "" password_solt: "" shopName: "name,name" theirShopList: "" vcode: "" } ]  success: true }
+28子账号详情-吴兴惠-修改1
+/busiapi/userCfg/getBusinessAccountDetail
+subUserId
+{ "message": "获取成功！", "count": 20, "responseObj": {"accountId": "423esrwed", "accountPhoneNum": "15099977777", "accountNickName": "张三", "accountRoleType": "2", "accountRoleTypeName": "店长", "accountPassword": "31231231", "accountState": "0", "isTwo":"0" }, "success": true, "code": 10000}
+29子账号修改（区域经理、店长、运营）-吴兴惠-修改
+/busiapi/userCfg/businessEditAccountDetail
+subUserId accountNickName theirShopList accountCompetence
+{ "message": "修改成功", "success": true, "code": 10000 }
+210子账号创建（区域经理、店长、运营）-吴兴惠-新增
+/busiapi/userCfg/businessAddAccountDetail
+accountRoleType accountNickName accountPhoneNum accountPassword theirShopList accountCompetence
+{ "message": "创建成功", "success": true, "code": 10000 }
+211门店列表（子账号创建、编辑时使用）-吴兴惠-新增1
+/sports/sptAppVenueCfg/getShopListForAccountCreate
+subUserId accountRoleType useForType
+{ "message": "获取成功！", "count": 20, "responseObj": [{ "storeId": "423esrwed", "storeName": "全民健身中心（山大路店）", "isChoose":"0" }, { "storeId": "231321de", "storeName": "全民健身中心（小清河店）", "isChoose":"0" }], "success": true, "code": 10000}
+212登录-修改
+/sports/userCfg/login
+phoneNum loginType passWord vcode
+{ "message": "登录成功！", "responseObj": {businessId:, loginRole: "1", managerId: data.managerId, venue_id: "", venueName: "", }, "success": true, "code": 10000}
+卡券管理-卡券列表-修改
+/sports/sptCouponCfg/getCardList
+storeId cardClassifyType page limit
+{ "message": "获取成功！", "count": 20, "responseObj": [{ "cardId": "1", "cardTypeId":"1", "cardPrice": "￥10", "leastPrice": "￥20", "consumptionPrice": "￥10", "reducePrice": "￥10", "cardName": "券名称", "experiencePrice": "￥10", "sportsType":"篮球，足球", "useBeginTime":"2019.10.10", "useEndTime":"2019.10.11", "surplusCount":"20", "isStart":"1" }, { "cardId": "2", "cardTypeId":"1", "cardPrice": "￥10", "leastPrice": "￥20", "consumptionPrice": "￥10", "reducePrice": "￥10", "cardName": "券名称", "experiencePrice": "￥10", "sportsType":"篮球，足球", "useBeginTime":"2019.10.10", "useEndTime":"2019.10.11", "surplusCount":"20", "isStart":"1", "receiveCount":"1", "useCount":"1", "verificationCount":"1" },], "success": true, "code": 10000}
+卡券管理-新增卡券-（备注：这里新增卡券，选了几个门店后，运动类型如何展示？展示几个门店运动类型的交集还是并集？不管展示那种集合，都得在选择了场馆后调用接口重新查询运动类型）-修改
+/sports/sptCouponCfg/addCard
+venueId userId cardTypeId cardPrice leastPrice cardName limitCount sportsType isAllSports useBeginTime useEndTime carcNotice applicableStoresId useTimeType useTimeCount !useTimeUnit useCouponGoodsId
+{ "message": "保存成功！", "success": true, "code": 10000 }
+卡券管理-编辑卡券-修改
+/sports/sptCouponCfg/getCardDetail
+storeId cardId
+{ "code": "10000", "count": 0, "message": "获取成功", "responseObj": { "couponName": "",//卡券名称 "publishBody": "1",//没用 "sendStartTime": "2020-02-27 00:00:00.0",//发放开始时间 "discountMoney": "100.00",卡券面额 "couponId": "1",卡券id "minConsumption": "100.00",用券最低订单金额 "publishCnt": 100,发放数量 "couponType": "1",卡券类型 "sportTypeList": [ { "sport_type_name": "篮球", "sport_type_id": "1" } ], "receiveCntLimit": 1,每个人可以领几张 "couponDesc": "欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取欢迎领取",注意事项 "startTime": "",使用开始时间 "endTime": "",使用结束时间 "sendEndTime": "2020-03-06 00:00:00.0"发放结束时间, "applicableStoresId":"1,2,3", "useCouponGoodsId":"1,2,3", "useTimeType":"1", "useTimeCount":"1", "useTimeUnit":"天", }, "success": true }
+卡券管理-适用门店列表-新增
+/sports/sptCouponCfg/getApplicableStoresList
+businessId storeId
+{ "message": "获取成功！", "count": 20, "responseObj": [{ "applicableStoresId": "1", "applicableStoresName":"门店1", }, { "applicableStoresId": "2", "applicableStoresName":"门店2", },], "success": true, "code": 10000}
+卡券管理-可用券商品列表-新增
+/sports/sptCouponCfg/getUseCouponGoodsList
+storeId
+{ "message": "获取成功！", "count": 20, "responseObj": [{ "useCouponGoodsId": "1", "useCouponGoodsName":"商品1", }, { "useCouponGoodsId": "2", "useCouponGoodsName":"商品2", },], "success": true, "code": 10000}
+团购管理-团购列表-修改
+/sports/sptAppTicketCfg/getGroupList
+storeId groupClassifyType page limit
+{ "message": "获取成功！", "count": 20, "responseObj": [{ "groupId": "1", "groupPrice": "￥10", "groupOldPrice": "￥20", "groupName": "团购名称", "refundRule":"100", "sportsType":"篮球，足球", "useBeginTime":"2019.10.10", "useEndTime":"2019.10.11", "surplusCount":"20", "isStart":"1" }, { "groupId": "2", "groupPrice": "￥10", "groupOldPrice": "￥20", "groupName": "团购名称", "refundRule":"100", "sportsType":"篮球，足球", "useBeginTime":"2019.10.10", "useEndTime":"2019.10.11", "surplusCount":"20", "isStart":"1", "salesCount":"1", "salesMoney":"1", "refundCount":"1", },], "success": true, "code": 10000}
+团购管理-新增团购-修改
+/sports/sptAppTicketCfg/addGroup
+storeId groupName groupThemeImg groupPrice groupOldPrice refundSetting refundTime stock limitCount payBeginTime payBeginTime sportsType purchaseLimitCount useBeginTime useEndTime useTime noUserDate appointmentInfo intendedPeople groupNotice groupProjectList groupProjectPrice serviceContent salesSetting applicableStoresId useTimeType useTimeCount useTimeUnit appointmentSetting appointmentCount appointmentUnit
+{ "message": "保存成功！", "success": true, "code": 10000 }
+团购管理-团购详情-修改
+/sports/sptAppTicketCfg/getGroupDetail
+storeId groupId
+{ "code": "10000", "count": 0, "message": "获取成功", "responseObj": { "application_person_info": "18-55",适用人数 "application_person_num": 2,适用人群 "can_add_num": 0,可加购数量，没用，废弃 "can_purchase_begin_time": "2019-07-22 23:45:51",购买开始时间 "can_purchase_end_time": "2019-07-31 00:00:00",购买结束时间 "can_purchase_num": 10,可以购买数量 "can_use_begin_date": "2019-07-22",可用开始时间 "can_use_end_date": "2019-07-31",可用结束时间 "cannot_use_date_desc": "国家法定节假日",不可用时间 "cautions": "注意",注意事项 "city_id": 370100,废弃 "is_attention": "0",废弃 "lable_id": "",废弃 "origina_unit_price": "1.00",原价 "refund_settings": "2",退款设置1 为不可退款 2为在时效范围内可以退款 "refund_time_settings": "24",多少小时内可退款 "reserve_info": "无需预约",预约信息 "sale_fee": "", 卖出钱数，废弃 "sale_num": "", 卖出数量，废弃 "sport_type_icon": "",，废弃 "sport_type_id": "0",运动类型id，0表示全部类型 "sport_type_name": "全部类型",运动类型名称 "ticket_id": "2",团购id "ticket_name": "哈哈哈0722",团购名称 "ticket_sale_num": "",已售数量 "ticket_state": "1",团购状态 "ticket_state_name": "",状态名称 "ticket_stock": 191,库存 "unit_price": "0.01",现价 "use_time_desc": "",使用时间描述 "venue_id": "3090"场馆id, "groupProjectList": [ { "groupProjectId": "1", "groupProjectName": "团购项目名称", "groupProjectCount": "团购项目数量", "groupProjectUnit": "团购项目数量单位", "groupProjectOldPrice": "团购项目原价", }, { "groupProjectId": "2",  "groupProjectName": "团购项目名称", "groupProjectCount": "团购项目数量", "groupProjectUnit": "团购项目数量单位", "groupProjectOldPrice": "团购项目原价",  }, ], "groupProjectPrice": "团购价", "serviceContent": "服务内容", "applicableStoresId": "1,2,3,4", "useTimeType": "1", "useTimeCount": "1", "useTimeUnit": "天", "appointmentSetting": "1", "appointmentCount": "2", "appointmentUnit": "天", }, "success": true }
+小程序权限-权限列表-新增
+/sports/sptauthCfg/getAuthList
+storeId managerId useForType subUserId
+{ "message": "获取成功！", "count": 20, "responseObj": [{ "authCode": "1", "authName":"权限名称", "isChecked":"1", "secondPath": [{ "authCode": "11", "authName":"权限名称", "isChecked":"1", "thirdPath": [{ "authCode": "111", "authName":"权限名称", "isChecked":"1", } ], } ], }, { "authCode": "2", "authName":"权限名称", "isChecked":"2", "secondPath": [{ "authCode": "21", "authName":"权限名称", "isChecked":"1", "thirdPath": [{ "authCode": "311", "authName":"权限名称", "isChecked":"1", }  ], } ], },], "success": true, "code": 10000}
+领券中心-通用券列表--董晓刚开发（备注cityId是传370100这种）
+/sports/sptCouponCfg/getCommonCouponList
+page limit cityId
+{ "message": "获取成功！", "count": 20, "responseObj": [{ "couponId": "56153671", "couponName": "", "couponPrice": "￥50", "couponPublisher": "1", "couponDiscountPrice": "", "couponDiscountType": "1", "couponSuitableType":"1", "couponNotice": "我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知", "isReceive": "0", "expiryType": "1", "expiryDate": "2019-12-24至2020-12-12", "leftReceiveNum": "6", "totalReceiveNum": "6", "couponReceiveRatio": "0.45", "isCertification": "1", "couponState":"1", "isOnlyForApp": "1", "couponUseTimeState":"1", "couponTotalLeftNum":"123", "venuesId": "0" }], "success": true, "code": 10000}
+领券中心-场馆定向券列表--董晓刚开发（备注cityId是传370100这种）
+/sports/sptCouponCfg/getVenueDirectCouponList
+longitude latitude page limit cityId venueName
+{ "message": "获取成功！", "count": 20, "responseObj": [{ "venueId": "56153671", "venueName": "济南全民健身中心", "venueDistance": "342m", "couponList": [ { "couponId": "56153671", "couponName": "", "couponPrice": "￥50", "couponPublisher": "1", "couponDiscountPrice": "", "couponDiscountType": "1", "couponSuitableType":"1", "couponNotice": "我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知", "isReceive": "0", "expiryType": "1", "expiryDate": "2019-12-24至2020-12-12", "leftReceiveNum": "6", "totalReceiveNum": "6", "couponReceiveRatio": "0.45", "isCertification": "1", "couponState":"1", "isOnlyForApp": "1", "couponUseTimeState":"1", "couponTotalLeftNum":"123" }, { "couponId": "56153671", "couponName": "", "couponPrice": "￥50", "couponPublisher": "1", "couponDiscountPrice": "", "couponDiscountType": "1", "couponSuitableType":"1", "couponNotice": "我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知", "isReceive": "0", "expiryType": "1", "expiryDate": "2019-12-24至2020-12-12", "leftReceiveNum": "6", "totalReceiveNum": "6", "couponReceiveRatio": "0.45", "isCertification": "1", "couponState":"1", "isOnlyForApp": "1", "couponUseTimeState":"1", "couponTotalLeftNum":"123" } ]} ], "success": true, "code": 10000 }
+领券中心-运动定向券列表--董晓刚开发（备注cityId是传370100这种）
+/sports/coupon/getSportDirectCouponList
+sportTypeId page limit cityId
+{ "message": "获取成功！", "count": 20, "responseObj": [ { "couponId": "56153671", "couponName": "", "couponPrice": "￥50", "couponPublisher": "1", "couponDiscountPrice": "", "couponDiscountType": "1", "couponSuitableType":"1", "couponNotice": "我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知", "isReceive": "0", "expiryType": "1", "expiryDate": "2019-12-24至2020-12-12", "leftReceiveNum": "6", "totalReceiveNum": "6", "couponReceiveRatio": "0.45", "isCertification": "1", "couponState":"1", "isOnlyForApp": "1", "couponUseTimeState":"1", "couponTotalLeftNum":"123" }, { "couponId": "56153671", "couponName": "", "couponPrice": "￥50", "couponPublisher": "1", "couponDiscountPrice": "", "couponDiscountType": "1", "couponSuitableType":"1", "couponNotice": "我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知", "isReceive": "0", "expiryType": "1", "expiryDate": "2019-12-24至2020-12-12", "leftReceiveNum": "6", "totalReceiveNum": "6", "couponReceiveRatio": "0.45", "isCertification": "1", "couponState":"1", "isOnlyForApp": "1",  "couponUseTimeState":"1", "couponTotalLeftNum":"123"，                                               "venuesId": "0" } ], "success": true, "code": 10000 }
+领券中心-免费券列表--董晓刚开发（备注cityId是传370100这种）
+/sports/sptCouponCfg/getFreeCouponList
+page limit cityId longitude latitude venueName
+{ "message": "获取成功！", "count": 20, "responseObj": "venueId": "56153671", "venueName": "济南全民健身中心", "venueDistance": "342m", "couponList": [ { "couponId": "56153671", "couponName": "", "couponPrice": "￥50", "couponPublisher": "1", "couponDiscountPrice": "", "couponDiscountType": "1", "couponSuitableType":"1", "couponNotice": "我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知", "isReceive": "0", "expiryType": "1", "expiryDate": "2019-12-24至2020-12-12", "leftReceiveNum": "6", "totalReceiveNum": "6", "couponReceiveRatio": "0.45", "isCertification": "1", "couponState":"1", "isOnlyForApp": "1", "couponUseTimeState":"1", "couponTotalLeftNum":"123", "venuesId":"123", } ], "success": true, "code": 10000}
+领券中心-企业场馆定向券可使用列表-董晓刚开发-同接口（https://tybapitest.snctv.cn/sports/sptAppVenueCfg/getUseForVenueList），不再重新写
+/sports/sptCouponCfg/getVenueCanUseList
+page limit platformId longitude latitude
+{ "message": "获取成功！", "count": 20, "responseObj": [ { "groupId": "56153671", "groupName": "", "groupPrice": "￥50", "groupOldPrice": "￥50", "venueDistance": "", "couponDiscountType": "1", "couponSuitableType":"1", "couponNotice": "我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知", "isReceive": "0", "expiryType": "1", "expiryDate": "2019-12-24至2020-12-12", "leftReceiveNum": "6", "totalReceiveNum": "6", "couponReceiveRatio": "0.45", "isCertification": "1", "couponState":"1", "isOnlyForApp": "1", "couponUseTimeState":"1", "couponTotalLeftNum":"123", "venuesId":"123", } ], "success": true, "code": 10000 }
+领券中心-领券中心搜索-董晓刚开发
+/sports/sptCouponCfg/getSearchCouponList
+page limit cityId longitude latitude couponType venueName
+{ "message": "获取成功！", "count": 20, "responseObj": "venueId": "56153671", "venueName": "济南全民健身中心", "venueDistance": "342m", "couponList": [ { "couponId": "56153671", "couponName": "", "couponPrice": "￥50", "couponPublisher": "1", "couponDiscountPrice": "", "couponDiscountType": "1", "couponSuitableType":"1", "couponNotice": "我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知我是须知", "isReceive": "0", "expiryType": "1", "expiryDate": "2019-12-24至2020-12-12", "leftReceiveNum": "6", "totalReceiveNum": "6", "couponReceiveRatio": "0.45", "isCertification": "1", "couponState":"1", "isOnlyForApp": "1", "couponUseTimeState":"1", "couponTotalLeftNum":"123", "venuesId":"123", } ], "success": true, "code": 10000 }
+场馆-场馆详情页——场馆详情--董晓刚开发（sptFieldTypeList这个list里新增字段）
+/sports/sptAppVenueCfg/getAppSptVenueDetail
+venue_id token
+{ "code": "", "count": 0, "errCode": "0", "execptionTrace": "", "message": "获取成功！", "requestURI": "", "responseObj": { "address": "山东省济南市市中区二环东路8999号", "area_name": "0", "city_id": "", "consult_number": "15666772028", "current_user_id": "", "is_collection": "0", "latitude": "36.628329", "longitude": "117.063124", "sptFieldTypeList": [{ "batch_id": "", "begin_time": "", "end_time": "", "field_type_id": "15", "field_type_name": "羽毛球馆", "pay_type": "", "period": "", "price": "", "sport_type_id": "5", "sport_type_name": "羽毛球", "sptFieldList": [], "canReservedDayNum": "2", "venue_id": "" }], "sptSportTypeList": [], "sptSubinfoList": [{ "create_time": "", "create_user_id": "", "create_user_name": "", "modify_time": "", "modify_user_id": "", "modify_user_name": "", "owner_type": "", "owner_type_text": "", "select_sport_type": "", "sport_type_id": "", "sport_type_name": "", "sptSportTypeList": [], "subinfo_content": "更衣室", "subinfo_icon": "http://master.hiconsports.com/album_images/imgsDir/sptSubinfo/20190722/201907227296242b74df4d45a4bf4056d006bb1d.png", "subinfo_id": "2", "subinfo_type": "service", "subinfo_type_text": "服务" }, { "create_time": "", "create_user_id": "", "create_user_name": "", "modify_time": "", "modify_user_id": "", "modify_user_name": "", "owner_type": "", "owner_type_text": "", "select_sport_type": "", "sport_type_id": "", "sport_type_name": "", "sptSportTypeList": [], "subinfo_content": "风扇空调", "subinfo_icon": "http://master.hiconsports.com/album_images/imgsDir/sptSubinfo/20190722/201907226ab9c6ab2ba643d2a749da4778e448ed.png", "subinfo_id": "8", "subinfo_type": "facility", "subinfo_type_text": "设施" }, { "create_time": "", "create_user_id": "", "create_user_name": "", "modify_time": "", "modify_user_id": "", "modify_user_name": "", "owner_type": "", "owner_type_text": "", "select_sport_type": "", "sport_type_id": "", "sport_type_name": "", "sptSportTypeList": [], "subinfo_content": "吊灯", "subinfo_icon": "http://master.hiconsports.com/album_images/imgsDir/sptSubinfo/20190722/2019072238f5e046a7c84ca79cbe4538bc31077d.png", "subinfo_id": "9", "subinfo_type": "facility", "subinfo_type_text": "设施" }, { "create_time": "", "create_user_id": "", "create_user_name": "", "modify_time": "", "modify_user_id": "", "modify_user_name": "", "owner_type": "", "owner_type_text": "", "select_sport_type": "", "sport_type_id": "", "sport_type_name": "", "sptSportTypeList": [], "subinfo_content": "储物柜", "subinfo_icon": "http://master.hiconsports.com/album_images/imgsDir/sptSubinfo/20190722/20190722cff54afcd5c44059b3b5fb01dba8d366.png", "subinfo_id": "10", "subinfo_type": "service", "subinfo_type_text": "服务" }, { "create_time": "", "create_user_id": "", "create_user_name": "", "modify_time": "", "modify_user_id": "", "modify_user_name": "", "owner_type": "", "owner_type_text": "", "select_sport_type": "", "sport_type_id": "", "sport_type_name": "", "sptSportTypeList": [], "subinfo_content": "卫生间", "subinfo_icon": "http://master.hiconsports.com/album_images/imgsDir/sptSubinfo/20190722/20190722d4cb007c71f24ec59e301458905bdd39.png", "subinfo_id": "11", "subinfo_type": "service", "subinfo_type_text": "服务" }], "sptVenuePicList": [{ "create_time": "", "create_user_id": "", "is_first": "", "pic_id": "7905", "pic_path": "http://master.hiconsports.com/album_images/imgsDir/sptvenue/20200417/20200417897c7c5727424bef9aebbd34a4bf4d8a.jpg", "venue_id": "21460342727049219" }], "venue_desc": "<section><p style=\"margin-top: 0px; margin-bottom: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; clear: both; min-height: 1em; overflow-wrap: break-word !important;\"><span style=\"margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; overflow-wrap: break-word !important;\">金码头体育作为专业的羽毛球赛事运营者，为助力羽球梦想，经过半年的筹备，金码头体育羽毛球馆于2020年1月19日开馆试营业。</span></p><p style=\"margin-top: 0px; margin-bottom: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; clear: both; min-height: 1em; overflow-wrap: break-word !important;\"><br/></p></section><section><p style=\"margin-top: 0px; margin-bottom: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; clear: both; min-height: 1em; overflow-wrap: break-word !important;\"><span style=\"margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; overflow-wrap: break-word !important;\">金码头体育羽毛球馆位于二环东路8999号，地处济南知名地标怪坡，坐落在老虎山山麓，交通便利，空气负氧离子含量高，是济南少有的运动健康结合部。</span></p><p style=\"margin-top: 0px; margin-bottom: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; clear: both; min-height: 1em; overflow-wrap: break-word !important;\"><br/></p></section><section><p style=\"margin-top: 0px; margin-bottom: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; clear: both; min-height: 1em; overflow-wrap: break-word !important;\">场馆净高12米，设有8片专业羽毛球场地，全新地胶和双龙骨专业运动木地板缓震，增强运动弹力；进口防炫目专业灯光设备灯光设置，运动时有效抑制刺眼和眩光，保障羽球爱好者在舒适的灯光下享受羽球的乐趣。<br/></p><p style=\"margin-top: 0px; margin-bottom: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; clear: both; min-height: 1em; overflow-wrap: break-word !important;\"><span style=\"margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; overflow-wrap: break-word !important;\"><br/></span></p><p style=\"margin-top: 0px; margin-bottom: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; clear: both; min-height: 1em; overflow-wrap: break-word !important;\"><span style=\"margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; overflow-wrap: break-word !important;\">场馆配有专业的羽毛球储物柜。配备空调系统，冬暖夏凉，独立四空间的男女更衣室、卫生间、淋浴间，24小时热水供应，为羽毛球爱好者提供最舒适的服务和运动感受。带给广大羽球爱好者更好的服务体验，更全面的技术交流。</span></p><p style=\"margin-top: 0px; margin-bottom: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; clear: both; min-height: 1em; overflow-wrap: break-word !important;\"><span style=\"margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; overflow-wrap: break-word !important;\"><br/></span></p><p style=\"margin-top: 0px; margin-bottom: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; clear: both; min-height: 1em; overflow-wrap: break-word !important;\"><span style=\"margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; overflow-wrap: break-word !important;\">场馆室外有免费停车场，停车位多，方便直达。</span></p></section><p><br/></p><p><br/></p><style>img{max-width:100%!important;}</style>", "venue_desc_text": "金码头体育作为专业的羽毛球赛事运营者，为助力羽球梦想，经过半...", "venue_id": "21460342727049219", "venue_name": "金码头体育馆", "venue_open_time_text": "9：00-21：00" }, "success": true }
+场馆-场馆详情页——团购-修改--董晓刚开发
+/sports/sptAppTicketCfg/getVenuePurchaseList
+venueId token
+{ "code": "10000", "count": 5, "errCode": null, "execptionTrace": "", "message": "获取成功！", "requestURI": "", "responseObj": [{ "appointmentInfo": "", "groupId": "1747", "groupName": "羽毛球次卡", "groupNotice": "", "groupOldPrice": "500.00", "groupPrice": "500.00", "groupThemeImg": "http://master.hiconsports.com/album_images/imgsDir/sptTicket/20200520/373b6b31-e8bf-4de0-a6f8-419b529b7c83.png", "intendedPeople": "", "isFree": "", "isStart": "", "leftReceiveNum": "1", "limitCount": "1", "noUserDate": "", "payBeginTime": "", "payEndTime": "", "purchaseLimitCount": "", "purchasePercent": "0.00", "purchaseState": "2", "refundRule": "", "refundSetting": "", "refundTime": "", "refundTimeSettings": "", "sportsType": "", "stock": "100", "storeId": "", "surplusCount": "", "useBeginTime": "", "useEndTime": "", "refundSetting":"1", "reserveSetting":"1", "useTime": "" }], "success": true }
+场馆-团购详情-新增
+/sports/sptAppTicketCfg/getVenuePurchaseDetail
+venue_id groupId
+{ "message": "获取成功！", "count": "", "responseObj": { "groupId": "1747", "groupName": "羽毛球次卡", "serviceContent": "我是服务内容我是服务内容我是服务内容我是服务内容我是服务内容我是服务内容我是服务内容", "refundSetting": "1", "reserveSetting": "1", "groupThemeImg": "http://master.hiconsports.com/album_images/imgsDir/sptTicket/20200520/373b6b31-e8bf-4de0-a6f8-419b529b7c83.png", "groupItemList": [ { "groupItemId":"32131", "groupItemName":"身体测试与分析", "groupItemNum":"2", "groupItemUnit":"份", "groupItemPrice":"200元" }, { "groupItemId":"2311", "groupItemName":"营养搭配健身指导", "groupItemNum":"1", "groupItemUnit":"节", "groupItemPrice":"10元" } ], "groupTotalPrice": "500元", "groupPrice": "100元", "canUseType":"1", "canUseDesc":"购买后30天内有效", "canUseBeginDate": "2020-05-23", "canUseEndDate": "2020-05-31", "useTimeDesc": "早9点-晚21点", "cannotUseDateDesc": "周末及法定及假日不可使用", "reserveInfo": "需提前3天预约", "applicationPersonNum": 1, "applicationPersonInfo": "每场进入不超过2人，18-65", "cautions": "购买本产品可以叠加使用政府券和企业券，本产品不可退款，购买后请七日内核销，逾期不可核销。所有会员需要遵守场馆规定。不可进行教学活动。" }, "success": true, "code": 10000 }
+场馆-选择场地是否可预订-新增
+/sports/sptAppVenueCfg/checkSptFieldGoodsCanBook
+venue_id field_id
+{ "code": "10000", "count": 0, "errCode": null, "execptionTrace": "", "message": "该场地n小时起订", "responseObj": { }, "success": true }
+场馆-场馆详情页——评论列表-修改
+/sports/sptAppVenueCfg/getSptVenueComment
+venue_id
+{ "code": "10000", "count": 1, "errCode": 100, "execptionTrace": "", "message": "评论获取成功！", "requestURI": "", "responseObj": [{ "avg_score": 0.0, "commentPic": [], "comment_content": "非常棒  气氛很好  ", "comment_id": "1743", "comment_state": 0, "comment_state_desc": "", "comment_time": "2020-05-06 22:02:27", "fac_score": 0, "field_score": 0, "head_pic": "http://master.hiconsports.com/album_images/imgsDir/sptuser/20200502/202005022131323e6e8d0c-b595-4e8e-99f6-fb8342563bf6.jpg", "modify_time": "", "nickname": "Petrichor", "order_no": "202005062157430001", "order_type": "4", "service_score": 0, "user_id": "", "venue_id": "", "isReply":"1", "replyName":"我是一个场馆（商家）", "replyContent":"您好！感谢您的好评及对我们提出的宝贵建议，我们会继续改善巴拉巴阿拉啦啦啦啦", "replyTime":"2019-05-31 09:01:56" }], "success": true }
+场馆-场馆详情页——评论详情-修改
+/sports/sptAppOrderCfg/getSptOrderCommentDetl
+comment_id
+{ "code": "", "count": 0, "errCode": null, "execptionTrace": "", "message": "获取成功！", "responseObj": { "comment_time": "2020-05-06 22:02:27", "nickname": "Petrichor", "head_pic": "http://master.hiconsports.com/album_images/imgsDir/sptuser/20200502/202005022131323e6e8d0c-b595-4e8e-99f6-fb8342563bf6.jpg", "comment_content": "非常棒  气氛很好  ", "comment_id": "1743", "commentPic": [], "replyName":"我是一个场馆（商家）", "isReply":"1", "replyContent":"您好！感谢您的好评及对我们提出的宝贵建议，我们会继续改善巴拉巴阿拉啦啦啦啦", "replyTime":"2019-05-31 09:01:56" }, "success": true }
+场馆-团购订单确认页——购买须知-修改-董晓刚
+/sports/sptAppTicketCfg/getTicketPurchaseNotes
+ticket_id
+{ "code": "", "count": 0, "errCode": null, "execptionTrace": "", "message": "获取成功！", "requestURI": "", "responseObj": { "cautions": "提前一天预约", "origina_unit_price": "129.00", "sport_type_icon": "http://master.hiconsports.com/album_images/imgsDir/sptFieldTypeSmall/20200422/2020042272770b8cef364241817252e22552b0c8.png", "can_purchase_num": 1, "application_person_info": "18-65", "ticket_id": "1469", "unit_price": "88.00", "can_use_type":"1", "reserve_info": "需提前3天预约", "can_use_end_date": "2020-06-06", "can_use_desc": "购买后30天内有效", "ticket_name": "梅威瑟花式打靶体验", "refund_time_settings": "", "cannot_use_date_desc": "法定节假日不可用", "can_use_begin_date": "2020-05-06", "use_time_desc": "7::22", "application_person_num": 1, "can_refund_time": "", "ticket_stock": 67, "sport_type_name": "搏击、拳击", "refund_settings": "1", "sport_type_id": "175" }, "success": true }
+
